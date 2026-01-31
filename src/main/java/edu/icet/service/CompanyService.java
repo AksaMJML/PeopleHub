@@ -1,6 +1,6 @@
-package service;
+package edu.icet.service;
 
-import model.dto.CompanyDTO;
+import edu.icet.model.dto.CompanyDTO;
 
 import java.util.List;
 

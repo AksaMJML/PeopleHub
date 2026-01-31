@@ -1,12 +1,12 @@
-package service.impl;
+package edu.icet.service.impl;
 
 import lombok.RequiredArgsConstructor;
-import model.dto.CompanyDTO;
-import model.entity.CompanyEntity;
+import edu.icet.model.dto.CompanyDTO;
+import edu.icet.model.entity.CompanyEntity;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
-import repositery.CompanyRepositery;
-import service.CompanyService;
+import edu.icet.repositery.CompanyRepositery;
+import edu.icet.service.CompanyService;
 
 import java.util.List;
 

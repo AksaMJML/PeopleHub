@@ -1,4 +1,4 @@
-package model.entity;
+package edu.icet.model.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
