@@ -2,6 +2,7 @@ package service.impl;
 
 import lombok.RequiredArgsConstructor;
 import model.dto.CompanyDTO;
+import model.entity.CompanyEntity;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 import repositery.CompanyRepositery;
@@ -18,6 +19,7 @@ public class CompanyServiceImp implements CompanyService {
 
     @Override
     public void addCompany(CompanyDTO companyDTO) {
+        repositery.save(mapper.map(companyDTO , CompanyEntity.class));
 
     }
 
