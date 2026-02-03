@@ -24,7 +24,7 @@ public class JobDepartmentServiceImpl implements JobDepartmentService {
 
     @Override
     public void updateJobDepartment(JobDepartmentDTO jobDepartmentDTO) {
-
+        repositery.save(mapper.map(jobDepartmentDTO , JobDepartmentEntity.class));
     }
 
     @Override
