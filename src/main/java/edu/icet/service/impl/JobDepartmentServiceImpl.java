@@ -29,7 +29,7 @@ public class JobDepartmentServiceImpl implements JobDepartmentService {
 
     @Override
     public void deleteJobDepartment(Integer jobId) {
-
+        repositery.deleteById(jobId);
     }
 
     @Override

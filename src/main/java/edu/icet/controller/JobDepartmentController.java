@@ -23,4 +23,9 @@ public class JobDepartmentController {
     public void updateJobDepartment(@RequestBody JobDepartmentDTO  jobDepartmentDTO) {
         service.updateJobDepartment(jobDepartmentDTO);
     }
+
+    @DeleteMapping("/delete-by-id/{jobId}")
+    public void deleteJobDepartment(@PathVariable Integer jobId) {
+        service.deleteJobDepartment(jobId);
+    }
 }
