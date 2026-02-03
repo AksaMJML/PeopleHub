@@ -6,6 +6,8 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/job-departments")
 @RequiredArgsConstructor
@@ -32,5 +34,10 @@ public class JobDepartmentController {
     @GetMapping("/search-by-id/{jobId}")
     public JobDepartmentDTO searchByJobId(@PathVariable Integer jobId) {
         return service.searchByJobId(jobId);
+    }
+
+    @GetMapping("/get-all")
+    public List<JobDepartmentDTO> getAllJobDepartments() {
+        return service.getAllJobDepartments();
     }
 }
