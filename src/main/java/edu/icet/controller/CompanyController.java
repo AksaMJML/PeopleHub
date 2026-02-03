@@ -3,10 +3,7 @@ package edu.icet.controller;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import edu.icet.model.dto.CompanyDTO;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import edu.icet.service.CompanyService;
 
 @RestController
@@ -20,5 +17,10 @@ public class CompanyController {
     @PostMapping("/add")
     public void addCompany(@RequestBody CompanyDTO companyDTO){
         service.addCompany(companyDTO);
+    }
+
+    @PutMapping("/update")
+    public void updateCompany(@RequestBody CompanyDTO companyDTO) {
+        service.updateCompany(companyDTO);
     }
 }

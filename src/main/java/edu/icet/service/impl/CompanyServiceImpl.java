@@ -12,7 +12,7 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @Service
-public class CompanyServiceImp implements CompanyService {
+public class CompanyServiceImpl implements CompanyService {
 
     final CompanyRepositery repositery;
     final ModelMapper mapper;
@@ -20,12 +20,11 @@ public class CompanyServiceImp implements CompanyService {
     @Override
     public void addCompany(CompanyDTO companyDTO) {
         repositery.save(mapper.map(companyDTO , CompanyEntity.class));
-
     }
 
     @Override
     public void updateCompany(CompanyDTO companyDTO) {
-
+        repositery.save(mapper.map(companyDTO , CompanyEntity.class));
     }
 
     @Override
