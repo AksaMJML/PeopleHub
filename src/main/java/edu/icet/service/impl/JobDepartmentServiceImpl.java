@@ -34,7 +34,9 @@ public class JobDepartmentServiceImpl implements JobDepartmentService {
 
     @Override
     public JobDepartmentDTO searchByJobId(Integer jobId) {
-        return null;
+        JobDepartmentEntity jobDepartmentEntity = repositery.findById(jobId).get();
+        JobDepartmentDTO jobDepartmentDTO = mapper.map(jobDepartmentEntity, JobDepartmentDTO.class);
+        return jobDepartmentDTO;
     }
 
     @Override

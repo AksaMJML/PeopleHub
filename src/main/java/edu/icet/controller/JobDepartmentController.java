@@ -28,4 +28,9 @@ public class JobDepartmentController {
     public void deleteJobDepartment(@PathVariable Integer jobId) {
         service.deleteJobDepartment(jobId);
     }
+
+    @GetMapping("/search-by-id/{jobId}")
+    public JobDepartmentDTO searchByJobId(@PathVariable Integer jobId) {
+        return service.searchByJobId(jobId);
+    }
 }
