@@ -30,12 +30,13 @@ public class CompanyServiceImpl implements CompanyService {
     @Override
     public void deleteCompany(String id) {
         repositery.deleteById(id);
-
     }
 
     @Override
     public CompanyDTO searchById(String id) {
-        return null;
+        CompanyEntity companyEntity = repositery.findById(id).get();
+        CompanyDTO companyDTO = mapper.map(companyEntity, CompanyDTO.class);
+        return companyDTO;
     }
 
     @Override

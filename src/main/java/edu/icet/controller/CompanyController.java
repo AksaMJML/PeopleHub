@@ -28,4 +28,9 @@ public class CompanyController {
     public void deleteCompany(@PathVariable String id) {
         service.deleteCompany(id);
     }
+
+    @GetMapping("/search-by-id/{id}")
+    public CompanyDTO searchById(@PathVariable String id) {
+        return service.searchById(id);
+    }
 }
