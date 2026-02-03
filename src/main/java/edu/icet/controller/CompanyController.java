@@ -6,6 +6,8 @@ import edu.icet.model.dto.CompanyDTO;
 import org.springframework.web.bind.annotation.*;
 import edu.icet.service.CompanyService;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/companies")
 @RequiredArgsConstructor
@@ -32,5 +34,10 @@ public class CompanyController {
     @GetMapping("/search-by-id/{id}")
     public CompanyDTO searchById(@PathVariable String id) {
         return service.searchById(id);
+    }
+
+    @GetMapping("/get-all")
+    public List<CompanyDTO> getAllCompanies() {
+        return service.getAllCompanies();
     }
 }

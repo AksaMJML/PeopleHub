@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import edu.icet.repositery.CompanyRepositery;
 import edu.icet.service.CompanyService;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -41,6 +42,12 @@ public class CompanyServiceImpl implements CompanyService {
 
     @Override
     public List<CompanyDTO> getAllCompanies() {
-        return List.of();
+        List<CompanyEntity> companyEntities = repositery.findAll();
+        ArrayList<CompanyDTO> companyDTOArrayList = new ArrayList<>();
+        companyEntities.forEach(companyEntity -> {
+            CompanyDTO companyDTO = mapper.map(companyEntity, CompanyDTO.class);
+            companyDTOArrayList.add(companyDTO);
+        });
+        return companyDTOArrayList;
     }
 }

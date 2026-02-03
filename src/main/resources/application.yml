@@ -6,5 +6,5 @@ Spring :
 
   Jpa :
     hinernate :
-      ddl-auto : create
+      ddl-auto : update
 
