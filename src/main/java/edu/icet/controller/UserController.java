@@ -4,9 +4,7 @@ import edu.icet.model.dto.UserDTO;
 import edu.icet.service.UserService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/users")
@@ -17,7 +15,12 @@ public class UserController {
     final UserService service;
 
     @PostMapping("/add")
-    public void addUser(UserDTO userDTO) {
+    public void addUser(@RequestBody UserDTO userDTO) {
         service.addUser(userDTO);
+    }
+
+    @PutMapping("/update")
+    public void updateUser(@RequestBody UserDTO userDTO) {
+        service.updateUser(userDTO);
     }
 }
