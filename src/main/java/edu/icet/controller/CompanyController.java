@@ -23,4 +23,9 @@ public class CompanyController {
     public void updateCompany(@RequestBody CompanyDTO companyDTO) {
         service.updateCompany(companyDTO);
     }
+
+    @DeleteMapping("/delete-by-id/{id}")
+    public void deleteCompany(@PathVariable String id) {
+        service.deleteCompany(id);
+    }
 }

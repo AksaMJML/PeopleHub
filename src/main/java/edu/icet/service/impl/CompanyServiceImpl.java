@@ -29,6 +29,7 @@ public class CompanyServiceImpl implements CompanyService {
 
     @Override
     public void deleteCompany(String id) {
+        repositery.deleteById(id);
 
     }
 
