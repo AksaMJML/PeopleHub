@@ -29,7 +29,7 @@ public class DepartmentServiceImpl implements DepartmentService {
 
     @Override
     public void deleteDepartment(Integer id) {
-
+        repositery.deleteById(id);
     }
 
     @Override
