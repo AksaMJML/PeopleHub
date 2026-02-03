@@ -4,10 +4,7 @@ import edu.icet.model.dto.DepartmentDTO;
 import edu.icet.service.DepartmentService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/departments")
@@ -20,5 +17,10 @@ public class DepartmentController {
     @PostMapping("/add")
     public void addDepartment(@RequestBody DepartmentDTO departmentDTO) {
         service.addDepartment(departmentDTO);
+    }
+
+    @PutMapping("/update")
+    public void updateDepartment(@RequestBody DepartmentDTO departmentDTO) {
+        service.updateDepartment(departmentDTO);
     }
 }
