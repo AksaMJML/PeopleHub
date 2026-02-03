@@ -34,7 +34,9 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserDTO searchByUserId(Integer userId) {
-        return null;
+        UserEntity userEntity = repositery.findById(userId).get();
+        UserDTO userDTO = mapper.map(userEntity, UserDTO.class);
+        return userDTO;
     }
 
     @Override
